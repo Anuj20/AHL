@@ -78,13 +78,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.btnRegister:
                 Intent reg = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(reg);
-                finish();
                 break;
 
             case R.id.tvForgot:
                 Intent forgot = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
                 startActivity(forgot);
-                finish();
                 break;
 
         }

@@ -3,12 +3,19 @@
     package="com.amithelpline.ahl">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- AdMob App ID: ca-app-pub-5994650700836913~7300642153 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-5994650700836913~7300642153"/>
+
         <service
             android:name=".activity.MyFirebaseInstanceIdService">
             <intent-filter>

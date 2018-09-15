@@ -22,11 +22,11 @@
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-5057880724201581/3293478768">
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-5994650700836913/2390547513">
     </com.google.android.gms.ads.AdView>
 </RelativeLayout>

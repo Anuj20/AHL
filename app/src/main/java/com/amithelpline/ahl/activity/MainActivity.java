@@ -81,8 +81,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        MobileAds.initialize(this, "ca-app-pub-5057880724201581~2555112164");
-        mAdView = (AdView) findViewById(R.id.adView);
+        MobileAds.initialize(this, "ca-app-pub-5994650700836913~7300642153");
+        mAdView = findViewById(R.id.adView);
         //.addTestDevice("07A2BBA833B555F7B7AB34144CE6BB00")
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+
     private void initDashboardFragment() {
         mHomeFragment = new HomeFragment();
         mHomeFragment.setOnGridMenuClickListener(this);
@@ -109,13 +110,11 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            mHomeFragment = new HomeFragment();
-            mHomeFragment.setOnGridMenuClickListener(this);
-            setFragment(mHomeFragment);
+          System.exit(1);
 
         }
     }
