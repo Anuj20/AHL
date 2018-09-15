@@ -11,8 +11,10 @@ import static android.content.ContentValues.TAG;
 public class MyFirebaseInstanceIdService extends FirebaseInstanceIdService {
     @Override
     public void onTokenRefresh() {
+
         // Get updated InstanceID token.
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+
         Log.d(TAG, "Refreshed token: " + refreshedToken);
         FirebaseMessaging.getInstance().subscribeToTopic("com.amithelpline.ahl");
     }

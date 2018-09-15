@@ -71,8 +71,16 @@ public class CurrencyFragment extends Fragment {
             @Override
             public void run() {
                 try {
-                    //  String PolicyParameter = "api_add_policy.php?name=" + Name + "&vehicle=" + Vehicle + "&vehicleno=" + VehicleNumber + "&user_id=" + UserId + "&policy_no=" + PolicyNo + "&premium_amount=" + PremiumAmt + "&premium_due_date=" + PremiumDate + "&premium_mode=" + PremiumMode + "&policy_type=" + PolicyType;
-                    String AddPolicyUrl = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(%22USDINR%22,%22AUDINR%22,%22EURINR%22,%22NZDINR%22,%22GBPINR%22,%22CADINR%22,%22AEDINR%22,%22THBINR%22)&env=store://datatables.org/alltableswithkeys&format=json";
+                    //  String PolicyParameter = "api_add_policy.php?name="
+                    // + Name + "&vehicle=" + Vehicle + "&vehicleno=" + VehicleNumber +
+                    // "&user_id=" + UserId + "&policy_no=" + PolicyNo + "&premium_amount=" +
+                    // PremiumAmt + "&premium_due_date=" + PremiumDate + "&premium_mode=" +
+                    // PremiumMode + "&policy_type=" + PolicyType;
+                    String AddPolicyUrl =
+                            "http://query.yahooapis.com/v1/public/yql?" +
+                                    "q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20" +
+                                    "(%22USDINR%22,%22AUDINR%22,%22EURINR%22,%22NZDINR%22,%22GBPINR%22,%22CADINR%22," +
+                                    "%22AEDINR%22,%22THBINR%22)&env=store://datatables.org/alltableswithkeys&format=json";
                     Log.e("Url", AddPolicyUrl);
                     new ApiConnection().connect(new OnApiResponseListener() {
                         @Override
@@ -108,11 +116,8 @@ public class CurrencyFragment extends Fragment {
                     }, null, AddPolicyUrl);
 
                 } catch (Exception e) {
-
                 }
             }
         });
-
-
     }
 }

@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.amithelpline.ahl.R;
 import com.amithelpline.ahl.fragment.AddGeneralPolicyFragment;
@@ -79,24 +80,21 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         MobileAds.initialize(this, "ca-app-pub-5994650700836913~7300642153");
         mAdView = findViewById(R.id.adView);
-        //.addTestDevice("07A2BBA833B555F7B7AB34144CE6BB00")
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         initDashboardFragment();
-
-
     }
 
 
@@ -144,7 +142,10 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.action_profile) {
             Fragment fragment = new ProfileFragment();
             setFragment(fragment);
-
+        }
+        else if (id == R.id.notification) {
+            //place the notification class here
+            Toast.makeText(this, "Coming soon...",Toast.LENGTH_LONG).show();
         }
 
         return super.onOptionsItemSelected(item);
@@ -177,9 +178,11 @@ public class MainActivity extends AppCompatActivity
             fragment = new PropertyListFragment();
 
         } else if (id == R.id.nav_AddApp) {
-            fragment = new DoctorAppointmentFragment();
+            //fragment = new DoctorAppointmentFragment();
+            Toast.makeText(MainActivity.this, "Coming Soon...", Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_viewAppiontment) {
-            fragment = new AppointmentListFragment();
+            //fragment = new AppointmentListFragment();
+            Toast.makeText(MainActivity.this, "Coming Soon...", Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_currency) {
             fragment = new CurrencyFragment();
         } else if (id == R.id.nav_ipo) {
